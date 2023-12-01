@@ -295,6 +295,9 @@ def eliminar_contacto(contactos: list, email: str):
 
 
 def mostrar_contactos(contactos):
+    """Muestra todos los contactos de la lista
+
+    """
     borrar_consola()
     contactos = sorted(contactos, key=lambda x: x["nombre"])
     print(f"Agenda ({len(contactos)})")
