@@ -310,6 +310,14 @@ def mostrar_contactos(contactos):
 
 
 def pedir_criterio():
+    """Solicita al usuraio el criterio
+
+    Raises:
+        ValueError: Se produce si el critrerio introducido no es valido
+
+    Returns:
+        criterio (int): criterio introducido por el usuario
+    """
     print("Criterios")
     print("-" * 9)
     todo_ok = False
@@ -329,11 +337,14 @@ def pedir_criterio():
             print("Introduce un criterio valido")
 
     return criterio
-
-
         
 
 def modificar_contacto(contactos:list):
+    """Modifica el contacto elegido segun el criterio
+
+    Args:
+        contactos (list): lista de contactos actualizada.
+    """
     email_modificar = input("Introduce el email del contacto a modificar: ")
     posicion = buscar_contacto(contactos, email_modificar)
     criterio = pedir_criterio()
@@ -353,6 +364,10 @@ def modificar_contacto(contactos:list):
 
 
 def mostrar_contactos_criterio(contactos: list):
+    """Solicita un criterio y muestra el contacto segun el criterio solicitado
+    Args:
+        contactos (list): lista de contactos actualizada.
+    """
     criterio = pedir_criterio()
 
     if criterio == 1:
@@ -381,6 +396,11 @@ def mostrar_contactos_criterio(contactos: list):
 
 
 def print_contacto(contacto):
+    """Print del contacto 
+
+    Args:
+        
+    """
     print(f"Nombre: {contacto["nombre"]} {contacto["apellido"]} ({contacto["email"]})")
     if not contacto["telefonos"]:
         print("Teléfonos: ninguno")
@@ -468,7 +488,7 @@ def mostrar_menu():
 
 def pedir_opcion():
     """Solicita al usuario una opcion
-    
+
     Returns:
         opcion (int): opcion introducida por el usuario
     """
